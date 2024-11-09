@@ -9,7 +9,10 @@ import Project2Img from "../../public/images/projects/crypto-screener-cover-imag
 
 const FeaturedProject = ({type, title, summary, img, link, github}) => {
     return (
-        <article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12">
+        <article
+            className="relative w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 rounded-br-2xl">
+
+            <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl"/>
 
             <Link href={link} target="_blank" className='w-1/2 cursor-pointer overflow-hidden rounded-lg'>
                 <Image src={img} alt={title} className='w-full h-auto'/>
@@ -25,7 +28,9 @@ const FeaturedProject = ({type, title, summary, img, link, github}) => {
 
                 <div className='mt-2 flex items-center'>
                     <Link href={github} target="_blank" className='w-10'><GithubIcon/></Link>
-                    <Link href={link} target="_blank" className='ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold'>Visit Project</Link>
+                    <Link href={link} target="_blank"
+                          className='ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold'>Visit
+                        Project</Link>
                 </div>
 
             </div>
@@ -36,7 +41,10 @@ const FeaturedProject = ({type, title, summary, img, link, github}) => {
 
 const Project = ({type, title, img, link, github}) => {
     return (
-        <article className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative'>
+        <article
+            className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative'>
+
+            <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl"/>
 
             <Link href={link} target="_blank" className='w-full cursor-pointer overflow-hidden rounded-lg'>
                 <Image src={img} alt={title} className='w-full h-auto'/>
@@ -77,7 +85,7 @@ const Projects = () => {
 
                     <AnimatedText text="Some of My Projects" className='mb-16'></AnimatedText>
 
-                    <div className='grid grid-cols-12 gap-24'>
+                    <div className='grid grid-cols-12 gap-24 gap-y-32'>
 
                         <div className='col-span-12'>
                             <FeaturedProject
