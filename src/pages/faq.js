@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {useEffect, useState} from "react";
 import {createQuestion, deleteQuestion, getAllQuestions, updateQuestion} from "./api/faqClient.js"
+import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline'; // Import icons
 
 const FaqItem = ({ question, answer, editable = false, onEdit, onDelete }) => {
 
@@ -58,11 +59,11 @@ const FaqItem = ({ question, answer, editable = false, onEdit, onDelete }) => {
                         </>
                     ) : (
                         <>
-                            <Button onClick={() => setIsEditing(true)} variant="outline">
-                                Edit
+                            <Button onClick={() => setIsEditing(true)} variant="outline" className="bg-transparent border-none p-0">
+                                <PencilIcon className="h-5 w-5 text-gray-500" />
                             </Button>
-                            <Button onClick={onDelete} variant="outline" className="text-red-600">
-                                Delete
+                            <Button onClick={onDelete} variant="outline" className="bg-transparent border-none p-0 text-red-600">
+                                <TrashIcon className="h-5 w-5 text-red-600" />
                             </Button>
                         </>
                     )}
@@ -76,6 +77,7 @@ const Faq = () => {
 
     const [isAsking, setIsAsking] = useState(false);
     const [newQuestion, setNewQuestion] = useState("");
+    const [pendingQuestions, setPendingQuestions] = useState([])
 
     const handleAsk = () => setIsAsking(!isAsking);
 
@@ -106,7 +108,17 @@ const Faq = () => {
         })
     };
 
-    const [pendingQuestions, setPendingQuestions] = useState([])
+    const handleEdit = (updatedQuestion, id) => {
+        const updatedData = { question: updatedQuestion };
+
+        updateQuestion(id, updatedData)
+            .then((response) => {
+                setPendingQuestions((prevQuestions) =>
+                    prevQuestions.map((q) => (q.id === id ? { ...q, question: updatedQuestion } : q))
+                );
+            })
+            .catch((err) => console.log("Error updating question", err));
+    };
 
     const listAllQuestions = async () => {
         getAllQuestions()
@@ -120,18 +132,6 @@ const Faq = () => {
     useEffect(() => {
         listAllQuestions()
     }, [])
-
-    const handleEdit = (updatedQuestion, id) => {
-        const updatedData = { question: updatedQuestion };
-
-        updateQuestion(id, updatedData)
-            .then((response) => {
-                setPendingQuestions((prevQuestions) =>
-                    prevQuestions.map((q) => (q.id === id ? { ...q, question: updatedQuestion } : q))
-                );
-            })
-            .catch((err) => console.log("Error updating question", err));
-    };
 
 
     return (
@@ -150,12 +150,17 @@ const Faq = () => {
                         className="mb-12 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
                     />
 
+
                     {/*QUESTION CREATION SECTION*/}
-                    <h2 className="text-3xl font-bold text-center my-8">Have a Burning Question?</h2>
+                    <h2 className="text-3xl font-bold text-center my-8">Confused by something in the SWF? </h2>
+                    <h2 className="text-1xl font-light text-center my-8">Post your question and I’ll be happy to help!</h2>
                     <div className="flex justify-center my-4">
-                        <Button onClick={handleAsk} variant="outline">
+                        <Button onClick={handleAsk} variant="outline"
+                                className="bg-blue-200 hover:bg-blue-300 text-blue-800">
                             {isAsking ? "Cancel" : "Ask away"}
                         </Button>
+
+
                     </div>
 
                     {isAsking && (
