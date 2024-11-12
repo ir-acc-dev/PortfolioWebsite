@@ -4,8 +4,10 @@ import AnimatedText from "@/components/AnimatedText";
 import Link from "next/link";
 import Image from 'next/image'
 import {GithubIcon} from "@/components/Icons";
-import Project1Img from "../../public/images/projects/agency-website-cover-image.jpg"
-import Project2Img from "../../public/images/projects/crypto-screener-cover-image.jpg"
+import RoadmapImg from "../../public/images/projects/Roadmap.png"
+import TravelJournalImg from "../../public/images/projects/TravelJournalImg.png"
+import FilmDatabaseImg from "../../public/images/projects/FilmDatabaseImg.png"
+import AircraftImg from "../../public/images/projects/AircraftImg.png"
 
 const FeaturedProject = ({type, title, summary, img, link, github}) => {
     return (
@@ -92,12 +94,12 @@ const Projects = () => {
 
                         <div className='col-span-12'>
                             <FeaturedProject
-                                title='Fullstack App Guide'
-                                img={Project1Img}
-                                summary='This is a summary of the project'
-                                link='http://localhost:3001'
-                                github='/'
-                                type='Featured Project'
+                                title='Fullstack App Roadmap'
+                                img={RoadmapImg}
+                                summary='This application provides the user with a references to begin building full stack applications'
+                                link='http://localhost:5173'
+                                github='https://github.com/ir-acc-dev/Roadmap'
+                                type='WebDev - Semester 3'
 
                             />
                         </div>
@@ -105,31 +107,31 @@ const Projects = () => {
                         <div className='col-span-6 sm:col-span-12'>
                             <Project
                                 title='Travel Journal'
-                                img={Project2Img}
-                                link='/'
-                                github='/'
-                                type='Featured Project'
+                                img={TravelJournalImg}
+                                link='http://localhost:3002'
+                                github='https://web.git.mil/swf/cohort-8-devs/solo-projects/irish_journal'
+                                type='Bridge - Solo Project'
                             />
                         </div>
 
                         <div className='col-span-6 sm:col-span-12'>
                             <Project
                                 title='Film Database'
-                                img={Project2Img}
-                                link='/'
-                                github='/'
-                                type='Featured Project'
+                                img={FilmDatabaseImg}
+                                link='http://localhost:3003'
+                                github='https://github.com/ir-acc-dev/AFC_Fall2024/tree/main/TMDB'
+                                type='WebDev - Semester 2'
                             />
                         </div>
 
                         <div className='col-span-12'>
                             <FeaturedProject
                                 title='Aircraft'
-                                img={Project1Img}
-                                summary='This is a summary of the project'
-                                link='/'
-                                github='/'
-                                type='Featured Project'
+                                img={AircraftImg}
+                                summary='First major Bridge project for the developer accelerator'
+                                link='http://localhost:3004'
+                                github='https://github.com/ir-acc-dev/Aircraft'
+                                type='Bridge - A Traumatic Experience'
 
                             />
                         </div>
