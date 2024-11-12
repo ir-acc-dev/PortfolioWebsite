@@ -47,7 +47,7 @@ export default function Home() {
                         </Link>
 
                         <Link
-                            href='mailto:irishm.1102@gmail.com'
+                            href='mailto:irish.r.manalang.mil@swf.army.mil'
                             target={"_blank"}
                             className='ml-4 text-lg font-medium capitalize text-dark underline md:text-base'
                         >

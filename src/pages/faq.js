@@ -152,7 +152,7 @@ const Faq = () => {
 
 
                     {/*QUESTION CREATION SECTION*/}
-                    <h2 className="text-3xl font-bold text-center my-8">Confused by something in the SWF? </h2>
+                    <h2 className="text-3xl font-bold text-center my-8">Confused? Curious? ChatGPT down? </h2>
                     <h2 className="text-1xl font-light text-center my-8">Post your question and I’ll be happy to help!</h2>
                     <div className="flex justify-center my-4">
                         <Button onClick={handleAsk} variant="outline"
@@ -183,15 +183,15 @@ const Faq = () => {
                     <ul className="w-full max-w-2xl mx-auto">
                         <FaqItem
                             question="What are the typical working hours?"
-                            answer="Our working hours are 9 am to 5 pm, Monday through Friday."
+                            answer="0830 to whenever Curt decides to have mercy on us (around 1700)"
                         />
                         <FaqItem
-                            question="What Will My Career Trajectory Look Like?"
-                            answer="We provide multiple paths to career advancement. Based on your interests and skills, there are several roles you can grow into."
+                            question="Do you go on field trips or work remote?"
+                            answer="No"
                         />
                         <FaqItem
-                            question="How do I navigate the FAQ section?"
-                            answer="Simply click on any question to view the answer. If you don’t find your answer here, feel free to ask!"
+                            question="How can I make it to lunch time?"
+                            answer="Take initiative of your own learning"
                         />
                     </ul>
 
