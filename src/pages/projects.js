@@ -92,10 +92,10 @@ const Projects = () => {
 
                         <div className='col-span-12'>
                             <FeaturedProject
-                                title='Project 1'
+                                title='Employee Management Website'
                                 img={Project1Img}
                                 summary='This is a summary of the project'
-                                link='/'
+                                link='http://localhost:3001'
                                 github='/'
                                 type='Featured Project'
 
@@ -104,7 +104,7 @@ const Projects = () => {
 
                         <div className='col-span-6 sm:col-span-12'>
                             <Project
-                                title='Project 1'
+                                title='Airplane'
                                 img={Project2Img}
                                 link='/'
                                 github='/'

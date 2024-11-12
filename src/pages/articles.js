@@ -57,7 +57,8 @@ const Articles = () => {
 
             <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden'>
                 <Layout className="pt-16">
-                    <AnimatedText text='Some of My Articles' className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'/>
+                    <AnimatedText text='Some of My Articles'
+                                  className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'/>
 
                     <ul className='grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16'>
                         <li>
@@ -89,26 +90,27 @@ const Articles = () => {
                             title='Article Title - a smaller one'
                             date="Feb 14, 2023"
                             link='/'
-                            />
+                        />
 
                         <Article
                             title='Article Title - a smaller one'
                             date="Feb 14, 2023"
                             link='/'
-                             />
+                        />
 
                         <Article
                             title='Article Title - a smaller one'
                             date="Feb 14, 2023"
                             link='/'
-                            />
+                        />
 
                         <Article
                             title='Article Title - a smaller one'
                             date="Feb 14, 2023"
                             link='/'
-                            />
+                        />
                     </ul>
+
                 </Layout>
 
 
