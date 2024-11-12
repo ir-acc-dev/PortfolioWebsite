@@ -76,14 +76,6 @@ const NavBar = () => {
 
                 <nav className="flex items-center justify-center flex-wrap">
                     <motion.a
-                        href='https://x.com'
-                        target={"_blank"}
-                        whileHover={{y: -2}}
-                        whileTap={{scale: .9}}
-                        className='w-6 mr-3'>
-                        <TwitterIcon/>
-                    </motion.a>
-                    <motion.a
                         href='https://github.com'
                         target={"_blank"}
                         whileHover={{y: -2}} w
@@ -97,20 +89,6 @@ const NavBar = () => {
                               whileTap={{scale: .9}}
                               className='w-6 mx-3'>
                         <LinkedInIcon/>
-                    </motion.a>
-                    <motion.a href='https://pintrest.com'
-                              target={"_blank"}
-                              whileHover={{y: -2}}
-                              whileTap={{scale: .9}}
-                              className='w-6 mx-3'>
-                        <PinterestIcon/>
-                    </motion.a>
-                    <motion.a href='https://dribbble.com'
-                              target={"_blank"}
-                              whileHover={{y: -2}}
-                              whileTap={{scale: .9}}
-                              className='w-6 ml-3'>
-                        <DribbbleIcon/>
                     </motion.a>
                 </nav>
 
@@ -131,17 +109,11 @@ const NavBar = () => {
                                               toggle={handleClick}></CustomMobileLink>
                             <CustomMobileLink href='/articles' title="Articles" className=''
                                               toggle={handleClick}></CustomMobileLink>
+                            <CustomMobileLink href='/faq' title="FAQ" className=''
+                                              toggle={handleClick}></CustomMobileLink>
                         </nav>
 
                         <nav className="flex items-center justify-center flex-wrap mt-2">
-                            <motion.a
-                                href='https://x.com'
-                                target={"_blank"}
-                                whileHover={{y: -2}}
-                                whileTap={{scale: .9}}
-                                className='w-6 mr-3 sm:mx-1'>
-                                <TwitterIcon/>
-                            </motion.a>
                             <motion.a
                                 href='https://github.com'
                                 target={"_blank"}
@@ -156,20 +128,6 @@ const NavBar = () => {
                                       whileTap={{scale: .9}}
                                       className='w-6 mx-3 sm:mx-1'>
                                 <LinkedInIcon/>
-                            </motion.a>
-                            <motion.a href='https://pintrest.com'
-                                      target={"_blank"}
-                                      whileHover={{y: -2}}
-                                      whileTap={{scale: .9}}
-                                      className='w-6 mx-3 sm:mx-1'>
-                                <PinterestIcon/>
-                            </motion.a>
-                            <motion.a href='https://dribbble.com'
-                                      target={"_blank"}
-                                      whileHover={{y: -2}}
-                                      whileTap={{scale: .9}}
-                                      className='w-6 ml-3 sm:mx-1'>
-                                <DribbbleIcon/>
                             </motion.a>
                         </nav>
 

@@ -92,7 +92,7 @@ const Projects = () => {
 
                         <div className='col-span-12'>
                             <FeaturedProject
-                                title='Employee Management Website'
+                                title='Fullstack App Guide'
                                 img={Project1Img}
                                 summary='This is a summary of the project'
                                 link='http://localhost:3001'
@@ -104,7 +104,7 @@ const Projects = () => {
 
                         <div className='col-span-6 sm:col-span-12'>
                             <Project
-                                title='Airplane'
+                                title='Travel Journal'
                                 img={Project2Img}
                                 link='/'
                                 github='/'
@@ -114,7 +114,7 @@ const Projects = () => {
 
                         <div className='col-span-6 sm:col-span-12'>
                             <Project
-                                title='Project 1'
+                                title='Film Database'
                                 img={Project2Img}
                                 link='/'
                                 github='/'
@@ -124,7 +124,7 @@ const Projects = () => {
 
                         <div className='col-span-12'>
                             <FeaturedProject
-                                title='Project 1'
+                                title='Aircraft'
                                 img={Project1Img}
                                 summary='This is a summary of the project'
                                 link='/'
@@ -133,27 +133,6 @@ const Projects = () => {
 
                             />
                         </div>
-
-                        <div className='col-span-6 sm:col-span-12'>
-                            <Project
-                                title='Project 1'
-                                img={Project2Img}
-                                link='/'
-                                github='/'
-                                type='Featured Project'
-                            />
-                        </div>
-
-                        <div className='col-span-6 sm:col-span-12'>
-                            <Project
-                                title='Project 1'
-                                img={Project2Img}
-                                link='/'
-                                github='/'
-                                type='Featured Project'
-                            />
-                        </div>
-
                     </div>
 
                 </Layout>

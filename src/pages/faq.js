@@ -144,7 +144,7 @@ const Faq = () => {
                     )}
 
                     <h2 className="text-3xl font-bold text-center mt-12 mb-4">
-                        Answered Questions
+                        Answered
                     </h2>
                     <ul className="w-full max-w-2xl mx-auto">
                         <FaqItem
@@ -162,7 +162,7 @@ const Faq = () => {
                     </ul>
 
                     <h2 className="text-3xl font-bold text-center mt-16 mb-4">
-                        Pending Questions
+                        Pending
                     </h2>
                     <ul className="w-full max-w-2xl mx-auto">
                         {pendingQuestions.map((q) => (
