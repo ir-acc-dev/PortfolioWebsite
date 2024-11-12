@@ -4,9 +4,10 @@ import AnimatedText from "@/components/AnimatedText";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {useEffect, useState} from "react";
-import {createQuestion, deleteQuestion, getAllQuestions} from "./api/faqClient.js"
+import {createQuestion, deleteQuestion, getAllQuestions, updateQuestion} from "./api/faqClient.js"
 
 const FaqItem = ({ question, answer, editable = false, onEdit, onDelete }) => {
+
     const [isOpen, setIsOpen] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
     const [editText, setEditText] = useState(question);
@@ -96,18 +97,12 @@ const Faq = () => {
         })
     };
 
-    const handleEdit = (id, newQuestion) => {
-        setPendingQuestions((prevQuestions) =>
-            prevQuestions.map((q) => (q.id === id ? { ...q, question: newQuestion } : q))
-        );
-    };
-
     const handleDelete = (id) => {
         deleteQuestion(id)
             .then(() => {
                 listAllQuestions();
             }).catch((err) => {
-                console.log(err);
+            console.log(err);
         })
     };
 
@@ -118,13 +113,26 @@ const Faq = () => {
             .then((response) => {
                 setPendingQuestions(response.data)
             }).catch((error) => {
-                console.log(error);
+            console.log(error);
         })
     }
 
     useEffect(() => {
         listAllQuestions()
     }, [])
+
+    const handleEdit = (updatedQuestion, id) => {
+        const updatedData = { question: updatedQuestion };
+
+        updateQuestion(id, updatedData)
+            .then((response) => {
+                setPendingQuestions((prevQuestions) =>
+                    prevQuestions.map((q) => (q.id === id ? { ...q, question: updatedQuestion } : q))
+                );
+            })
+            .catch((err) => console.log("Error updating question", err));
+    };
+
 
     return (
         <>
@@ -191,7 +199,7 @@ const Faq = () => {
                                 question={q.question}
                                 answer=""
                                 editable
-                                onEdit={(newQuestion) => handleEdit(q.id, newQuestion)}
+                                onEdit={(updatedQuestion) => handleEdit(updatedQuestion, q.id)}
                                 onDelete={() => handleDelete(q.id)}
                             />
                         ))}
