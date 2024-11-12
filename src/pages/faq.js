@@ -4,7 +4,7 @@ import AnimatedText from "@/components/AnimatedText";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {useEffect, useState} from "react";
-import {createQuestion, getAllQuestions} from "./api/faqClient.js"
+import {createQuestion, deleteQuestion, getAllQuestions} from "./api/faqClient.js"
 
 const FaqItem = ({ question, answer, editable = false, onEdit, onDelete }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -103,7 +103,12 @@ const Faq = () => {
     };
 
     const handleDelete = (id) => {
-        setPendingQuestions((prevQuestions) => prevQuestions.filter((q) => q.id !== id));
+        deleteQuestion(id)
+            .then(() => {
+                listAllQuestions();
+            }).catch((err) => {
+                console.log(err);
+        })
     };
 
     const [pendingQuestions, setPendingQuestions] = useState([])
