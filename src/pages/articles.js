@@ -84,16 +84,11 @@ const Articles = () => {
                     <ul>
                         <Article
                             title='Fullstack - Template w/ Testing'
-                            link='/'
+                            link='https://docs.google.com/document/d/1Ye0FSW-gqCqusLJbh_ySfhj9EE8Rq14fx2c_EcNFFG4/edit?usp=sharing'
                         />
 
                         <Article
                             title='Tailwind CSS - Frontend Template'
-                            link='/'
-                        />
-
-                        <Article
-                            title="Where's that doc?"
                             link='/'
                         />
 
