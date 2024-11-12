@@ -55,7 +55,7 @@ const Experience = () => {
 
                 <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
                     <Details
-                        position="Software Engineer" company=" US Army - Futures Command"
+                        position="Software Developer" company=" US Army - Futures Command"
                         companyLink="https://www.army.mil"
                         time="2024-Present" address="Austin, TX"
                         work='Currently in training to develop full-stack applications to solve complex Army challenges'
