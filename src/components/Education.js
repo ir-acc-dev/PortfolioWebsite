@@ -53,31 +53,20 @@ const Education = () => {
                     className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top md:w-[2px] md:left-[30px] xs:left-[20px]'/>
 
                 <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
+
                     <Details
-                        type="Bachelor of Science in Neuroscience"
-                        time="2016-2020"
-                        place="Santa Clara University"
-                        info='Division I Womens Rowing, ROTC, Summa Cum Laude'
+                        type="Certificate: Web Developer Specialist"
+                        time="2024"
+                        place="Austin Community College"
+                        info='US Army program to transition Soldiers into Software Developers'
                     />
 
                     <Details
                         type="Bachelor of Science in Neuroscience"
                         time="2016-2020"
                         place="Santa Clara University"
-                        info='Division I Womens Rowing, ROTC, Summa Cum Laude'
+                        info='Highlights: Summa Cum Laude, Division I Womens Rowing, ROTC'
                     />
-
-                    <Details
-                        type="Bachelor of Science in Neuroscience"
-                        time="2016-2020"
-                        place="Santa Clara University"
-                        info='Division I Womens Rowing, ROTC, Summa Cum Laude'
-                    />
-
-
-
-
-
 
                 </ul>
             </div>

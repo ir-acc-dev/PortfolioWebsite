@@ -29,25 +29,13 @@ const About = () => {
                             <h2 className="mb-4 text-3xl lg:text-2xl font-bold uppercase text-dark/75">Biography</h2>
 
                             <p className="text-xl lg:text-lg font-medium">
-                                This is the first paragraph. I need to have a longer piece of text here to see if the
-                                alignment of the photo is better.
-                                Otherwise the spacing needs to be corrected. Adding more substance to this paragraph to
-                                make it look a little bit better.
-                                I think I should make the font bigger so more space is taken up.
+                                Hey there! I’m Irish, and my journey to software development has been quite the adventure. I began with a passion for neuroscience, earning my Bachelor of Science from Santa Clara University, where I had the opportunity to challenge myself both academically and athletically as a Division I rower and ROTC cadet. After finishing my degree summa cum laude, I embraced a new chapter with the U.S. Army, where I had the privilege of working in diverse roles across the globe, from South Korea to Germany. Along the way, I managed complex projects and led amazing teams, always with the goal of keeping things organized and empowering others
                             </p>
                             <p className="text-xl lg:text-lg font-medium my-4">
-                                This is the first paragraph. I need to have a longer piece of text here to see if the
-                                alignment of the photo is better.
-                                Otherwise the spacing needs to be corrected. Adding more substance to this paragraph to
-                                make it look a little bit better.
-                                I think I should make the font bigger so more space is taken up.
+                                These days, I’ve shifted my focus to the tech world as a full-stack developer, using my skills to create practical, user-friendly applications that solve real-world problems. Through my training in full stack development, I’ve developed a strong foundation in languages like JavaScript, Java, and React. I’m passionate about building solutions that make life easier for others and finding ways to bridge the gap between technical and human needs.
                             </p>
                             <p className="text-xl lg:text-lg font-medium">
-                                This is the first paragraph. I need to have a longer piece of text here to see if the
-                                alignment of the photo is better.
-                                Otherwise the spacing needs to be corrected. Adding more substance to this paragraph to
-                                make it look a little bit better.
-                                I think I should make the font bigger so more space is taken up.
+                                When I’m not coding, you’ll usually find me planning my next travel adventure — 40 countries and counting! I’m always excited to explore more of the world. And if I’m not traveling, I’m likely hanging out with my puppy, Rio. My goal is to create software that helps people work smarter so they can spend less time at their desks and more time enjoying life, seeing the world, and making lasting memories. Here’s to living fully and working efficiently!
                             </p>
                         </div>
 
