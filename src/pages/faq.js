@@ -4,7 +4,7 @@ import AnimatedText from "@/components/AnimatedText";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {useEffect, useState} from "react";
-import {getAllQuestions} from "./api/faqClient.js"
+import {createQuestion, getAllQuestions} from "./api/faqClient.js"
 
 const FaqItem = ({ question, answer, editable = false, onEdit, onDelete }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -72,26 +72,28 @@ const FaqItem = ({ question, answer, editable = false, onEdit, onDelete }) => {
 };
 
 const Faq = () => {
-    // const [pendingQuestions, setPendingQuestions] = useState([
-    //     { id: 1, question: "Figure out how to map" },
-    //     { id: 2, question: "Pray for me" },
-    //     { id: 3, question: "How to direct to edit page" },
-    // ]);
+
     const [isAsking, setIsAsking] = useState(false);
     const [newQuestion, setNewQuestion] = useState("");
 
     const handleAsk = () => setIsAsking(!isAsking);
 
-    const handleSubmitQuestion = () => {
-        if (newQuestion.trim()) {
-            const newQuestionObj = {
-                id: Date.now(), // simple unique id for example purposes
-                question: newQuestion,
-            };
-            setPendingQuestions([...pendingQuestions, newQuestionObj]);
-            setNewQuestion(""); // Clear the input
-            setIsAsking(false); // Hide the input box after submission
-        }
+    const handleSubmitQuestion = (e) => {
+        e.preventDefault();
+
+        const faqQuestion = {question : newQuestion};
+
+        createQuestion(faqQuestion)
+            .then((res) => {
+                setPendingQuestions((prevQuestions) => [
+                    ...prevQuestions,
+                    res.data,
+                ])
+                setNewQuestion("");
+                setIsAsking(false);
+            }).catch((err) => {
+                console.log(err);
+        })
     };
 
     const handleEdit = (id, newQuestion) => {
@@ -127,15 +129,16 @@ const Faq = () => {
             </Head>
 
             <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden">
+
                 <Layout className="pt-16">
+
                     <AnimatedText
                         text="Frequently Asked Questions"
                         className="mb-12 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
                     />
 
-                    <h2 className="text-3xl font-bold text-center my-8">
-                        Have a Burning Question?
-                    </h2>
+                    {/*QUESTION CREATION SECTION*/}
+                    <h2 className="text-3xl font-bold text-center my-8">Have a Burning Question?</h2>
                     <div className="flex justify-center my-4">
                         <Button onClick={handleAsk} variant="outline">
                             {isAsking ? "Cancel" : "Ask away"}
@@ -157,9 +160,8 @@ const Faq = () => {
                         </div>
                     )}
 
-                    <h2 className="text-3xl font-bold text-center mt-12 mb-4">
-                        Answered
-                    </h2>
+                    {/*ANSWERED QUESTIONS SECTION // HARD CODED*/}
+                    <h2 className="text-3xl font-bold text-center mt-12 mb-4">Answered</h2>
                     <ul className="w-full max-w-2xl mx-auto">
                         <FaqItem
                             question="What are the typical working hours?"
@@ -176,10 +178,7 @@ const Faq = () => {
                     </ul>
 
                     {/*PENDING QUESTIONS SECTION*/}
-
-                    <h2 className="text-3xl font-bold text-center mt-16 mb-4">
-                        Pending
-                    </h2>
+                    <h2 className="text-3xl font-bold text-center mt-16 mb-4">Pending</h2>
                     <ul className="w-full max-w-2xl mx-auto">
                         {pendingQuestions.map((q) => (
                             <FaqItem
@@ -192,6 +191,7 @@ const Faq = () => {
                             />
                         ))}
                     </ul>
+
                 </Layout>
             </main>
 
