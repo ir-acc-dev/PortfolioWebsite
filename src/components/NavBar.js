@@ -78,8 +78,8 @@ const NavBar = () => {
                     <motion.a
                         href='https://github.com'
                         target={"_blank"}
-                        whileHover={{y: -2}} w
-                        hileTap={{scale: .9}}
+                        whileHover={{y: -2}}
+                        whileTap={{scale: .9}}
                         className='w-6 mx-3'>
                         <GithubIcon/>
                     </motion.a>
@@ -117,8 +117,8 @@ const NavBar = () => {
                             <motion.a
                                 href='https://github.com'
                                 target={"_blank"}
-                                whileHover={{y: -2}} w
-                                hileTap={{scale: .9}}
+                                whileHover={{y: -2}}
+                                whileTap={{scale: .9}}
                                 className='w-6 mx-3 sm:mx-1'>
                                 <GithubIcon/>
                             </motion.a>

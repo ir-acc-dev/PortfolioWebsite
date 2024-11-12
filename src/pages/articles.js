@@ -89,7 +89,7 @@ const Articles = () => {
 
                         <Article
                             title='Tailwind CSS - Frontend Template'
-                            link='/'
+                            link='https://github.com/ir-acc-dev/Template_TailwindCSS'
                         />
 
                     </ul>
