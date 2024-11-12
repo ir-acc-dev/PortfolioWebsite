@@ -3,7 +3,8 @@ import Layout from "@/components/Layout";
 import AnimatedText from "@/components/AnimatedText";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import {useEffect, useState} from "react";
+import {getAllQuestions} from "./api/faqClient.js"
 
 const FaqItem = ({ question, answer, editable = false, onEdit, onDelete }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,9 +17,7 @@ const FaqItem = ({ question, answer, editable = false, onEdit, onDelete }) => {
     };
 
     return (
-        <li
-            className="w-full p-4 my-4 bg-light border border-solid border-dark rounded-lg"
-        >
+        <li className="w-full p-4 my-4 bg-light border border-solid border-dark rounded-lg">
             <div
                 className="flex items-center justify-between cursor-pointer"
                 onClick={() => !isEditing && setIsOpen(!isOpen)}
@@ -105,6 +104,21 @@ const Faq = () => {
         setPendingQuestions((prevQuestions) => prevQuestions.filter((q) => q.id !== id));
     };
 
+    const [questions, setQuestions] = useState([])
+
+    const listAllQuestions = async () => {
+        getAllQuestions()
+            .then((response) => {
+                setQuestions(response.data)
+            }).catch((error) => {
+                console.log(error);
+        })
+    }
+
+    useEffect(() => {
+        listAllQuestions()
+    }, [])
+
     return (
         <>
             <Head>
@@ -178,6 +192,25 @@ const Faq = () => {
                     </ul>
                 </Layout>
             </main>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>Question</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {questions.map((q) => (
+                    <tr key={q.id}>
+                        <td>{q.question}</td>
+                    </tr>
+                ))}
+                    <tr>
+                        <td>Test data</td>
+                    </tr>
+                </tbody>
+            </table>
         </>
     );
 };
