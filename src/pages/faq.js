@@ -72,11 +72,11 @@ const FaqItem = ({ question, answer, editable = false, onEdit, onDelete }) => {
 };
 
 const Faq = () => {
-    const [pendingQuestions, setPendingQuestions] = useState([
-        { id: 1, question: "Figure out how to map" },
-        { id: 2, question: "Pray for me" },
-        { id: 3, question: "How to direct to edit page" },
-    ]);
+    // const [pendingQuestions, setPendingQuestions] = useState([
+    //     { id: 1, question: "Figure out how to map" },
+    //     { id: 2, question: "Pray for me" },
+    //     { id: 3, question: "How to direct to edit page" },
+    // ]);
     const [isAsking, setIsAsking] = useState(false);
     const [newQuestion, setNewQuestion] = useState("");
 
@@ -104,12 +104,12 @@ const Faq = () => {
         setPendingQuestions((prevQuestions) => prevQuestions.filter((q) => q.id !== id));
     };
 
-    const [questions, setQuestions] = useState([])
+    const [pendingQuestions, setPendingQuestions] = useState([])
 
     const listAllQuestions = async () => {
         getAllQuestions()
             .then((response) => {
-                setQuestions(response.data)
+                setPendingQuestions(response.data)
             }).catch((error) => {
                 console.log(error);
         })
@@ -175,6 +175,8 @@ const Faq = () => {
                         />
                     </ul>
 
+                    {/*PENDING QUESTIONS SECTION*/}
+
                     <h2 className="text-3xl font-bold text-center mt-16 mb-4">
                         Pending
                     </h2>
@@ -193,24 +195,6 @@ const Faq = () => {
                 </Layout>
             </main>
 
-            <table>
-                <thead>
-                    <tr>
-                        <td>Question</td>
-                    </tr>
-                </thead>
-
-                <tbody>
-                {questions.map((q) => (
-                    <tr key={q.id}>
-                        <td>{q.question}</td>
-                    </tr>
-                ))}
-                    <tr>
-                        <td>Test data</td>
-                    </tr>
-                </tbody>
-            </table>
         </>
     );
 };
